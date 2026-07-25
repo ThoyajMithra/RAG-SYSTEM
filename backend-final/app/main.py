@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5000",
-        "https://rag-system-production-fd2a.up.railway.app",
+        "https://rag-system-2vt.pages.dev",
     ],
     allow_credentials=True,
     allow_methods=["*"],
