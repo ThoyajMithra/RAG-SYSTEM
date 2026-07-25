@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi import routing
+from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy import text
 
@@ -9,6 +10,16 @@ from app.api import routes_upload, routes_query, routes_documents
 
 app = FastAPI(title="RAG Backend")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5000",
+        "https://rag-system-production-fd2a.up.railway.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
