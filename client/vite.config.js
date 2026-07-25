@@ -9,11 +9,11 @@ export default defineConfig({
     port: 5000,
     proxy: {
       '/query': {
-        target: 'http://localhost:8000',
+        target: 'http://0.0.0.0:8080',
         changeOrigin: true
       },
       '/upload': {
-        target: 'http://localhost:8000',
+        target: 'http://0.0.0.0:8080',
         changeOrigin: true
       }
     }
