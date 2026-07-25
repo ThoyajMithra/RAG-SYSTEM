@@ -3,7 +3,7 @@
 // so it's easy to change the base URL, add auth headers, retries, etc.
 
 
-const BASE_URL = ''; 
+const BASE_URL = 'https://rag-system-production-fd2a.up.railway.app'; 
 
 /**
  * Sends a full conversation to the backend and returns the assistant's reply.
@@ -16,7 +16,7 @@ export async function sendMessage(messages) {
   console.log(messages);
   console.log(JSON.stringify({ question }));
 
-  const res = await fetch(`/query`, {
+  const res = await fetch(`${BASE_URL}/query`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question }) 
@@ -43,7 +43,7 @@ export async function sendMessageWithFiles(files) {
     formData.append("files", file);
   });
 
-  const res = await fetch(`/upload`, {
+  const res = await fetch(`${BASE_URL}/upload`, {
     method: "POST",
     body: formData,
   });

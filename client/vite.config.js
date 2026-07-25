@@ -9,11 +9,11 @@ export default defineConfig({
     port: 5000,
     proxy: {
       '/query': {
-        target: 'https://rag-system-production-fd2a.up.railway.app',
+        target: '',
         changeOrigin: true
       },
       '/upload': {
-        target: 'https://rag-system-production-fd2a.up.railway.app',
+        target: '',
         changeOrigin: true
       }
     }
